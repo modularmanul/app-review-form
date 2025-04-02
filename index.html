@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Provide your valuable feedback on our app to help us improve user experience, functionality, and overall performance."
+    />
+    <meta
+      name="keywords"
+      content="app review, user feedback, app improvement, user experience, functionality, performance"
+    />
+    <meta name="author" content="Modular Manul" />
+    <title>App Review</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antic&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">App Review</h1>
+      <p id="description">
+        We are always looking for ways to improve our app and make it more
+        user-friendly. We value your opinion and we would love to hear your
+        thoughts on how we can make it better. If you have any suggestions or
+        feedback, please fill out this form and let us know your thoughts. We
+        appreciate your time and effort in helping us improve the app.
+        <br />
+
+        <strong>Thank you for your support!</strong>
+      </p>
+    </header>
+    <main>
+      <hr />
+      <form id="survey-form" method="post" action="#">
+        <fieldset id="user-information">
+          <legend class="sr-only">User Information</legend>
+          <label class="block" id="name-label" for="name"
+            >Name <input type="text" name="name" id="name" required
+          /></label>
+          <label class="block" id="email-label" for="email"
+            >Email <input type="email" name="email" id="email" required
+          /></label>
+          <label class="block" id="number-label" for="age"
+            >Age
+            <input
+              type="number"
+              name="age"
+              id="age"
+              min="13"
+              max="120"
+              required
+          /></label>
+          <label class="block" for="gender"
+            >Gender
+            <select name="gender" id="gender">
+              <option value="">Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="non-binary">Non-binary</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select></label
+          >
+          <label class="block" id="phone-label" for="phone"
+            >Phone
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="+1 (777) 777-7777"
+              required
+          /></label>
+          <label class="block" id="search-label" for="search-input"
+            >Country</label
+          >
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Type to search..."
+            onkeyup="filterDropdown()"
+            onclick="showDropdown()"
+            aria-labelledby="search-label"
+            aria-controls="dropdown-list"
+            aria-expanded="false"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-haspopup="listbox"
+          />
+          <div class="dropdown-content" id="dropdown-list" role="listbox">
+            <!-- Options will be added dynamically -->
+          </div>
+        </fieldset>
+        <fieldset id="improvement-areas">
+          <legend>What improvements would you like?</legend>
+          <label class="block inline" for="user-interface">
+            <input
+              type="checkbox"
+              id="user-interface"
+              name="improvement-area"
+              value="user-interface"
+              checked
+            />
+            <div class="custom-checkbox"></div>
+            User Interface
+          </label>
+          <label class="block inline" for="user-experience">
+            <input
+              type="checkbox"
+              id="user-experience"
+              name="improvement-area"
+              value="user-experience"
+            />
+            <div class="custom-checkbox"></div>
+            User Experience
+          </label>
+          <label class="block inline" for="app-performance">
+            <input
+              type="checkbox"
+              id="app-performance"
+              name="improvement-area"
+              value="app-performance"
+            />
+            <div class="custom-checkbox"></div>
+            App Performance
+          </label>
+          <label class="block inline" for="user-customization">
+            <input
+              type="checkbox"
+              id="user-customization"
+              name="improvement-area"
+              value="user-customization"
+            />
+            <div class="custom-checkbox"></div>
+            Customization
+          </label>
+          <label class="block inline" for="functionality">
+            <input
+              type="checkbox"
+              id="functionality"
+              name="improvement-area"
+              value="functionality"
+            />
+            <div class="custom-checkbox"></div>
+            Functionality
+          </label>
+          <label class="block inline" for="accessibility">
+            <input
+              type="checkbox"
+              id="accessibility"
+              name="improvement-area"
+              value="accessibility"
+            />
+            <div class="custom-checkbox"></div>
+            Accessibility
+          </label>
+          <label class="block inline" for="privacy-and-security">
+            <input
+              type="checkbox"
+              id="privacy-and-security"
+              name="improvement-area"
+              value="privacy-and-security"
+            />
+            <div class="custom-checkbox"></div>
+            Privacy & Security
+          </label>
+          <label class="block inline" for="customer-support">
+            <input
+              type="checkbox"
+              id="customer-support"
+              name="improvement-area"
+              value="customer-support"
+            />
+            <div class="custom-checkbox"></div>
+            Customer Support
+          </label>
+          <div class="block inline">
+            <label for="other">
+              <input
+                type="checkbox"
+                id="other"
+                name="improvement-area"
+                value="other"
+              />
+              <div class="custom-checkbox"></div>
+              Other:
+            </label>
+            <label for="other-detail">
+              <input
+                type="text"
+                id="other-detail"
+                name="improvement-area"
+                placeholder="Specify here"
+              />
+            </label>
+          </div>
+        </fieldset>
+        <fieldset id="review-details" class="block">
+          <legend>How would you rate our app?</legend>
+          <div class="rate">
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5" aria-label="5 stars">★</label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4" aria-label="4 stars">★</label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3" aria-label="3 stars">★</label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2" aria-label="2 stars">★</label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1" aria-label="1 star">★</label>
+          </div>
+          <label for="review-details-textarea">
+            Share your thoughts:
+            <textarea
+              id="review-details-textarea"
+              placeholder="Providing us with a detailed description allows us to understand better and do our best."
+            ></textarea>
+          </label>
+        </fieldset>
+        <fieldset id="user-agreement">
+          <legend class="sr-only">
+            User Agreement on Terms and Conditions and Privacy Policy
+          </legend>
+
+          <p>
+            We are committed to protecting your privacy and ensuring that your
+            personal information is handled in a safe and responsible manner.
+            <br />
+            We will not share your information with any third parties without
+            your consent. <br />
+            We will only use your information to improve our app and provide you
+            with the best possible experience. <br />
+            If you have any questions or concerns about our
+            <a href="#" target="_blank"> terms and conditions</a> or
+            <a href="#" target="_blank"> privacy policy</a>, please feel free to
+            contact us. <br />
+          </p>
+          <label class="block inline" for="terms-and-conditions">
+            <input
+              type="checkbox"
+              id="terms-and-conditions"
+              name="terms-and-conditions"
+              value="terms-and-conditions"
+              required
+            />
+            <div class="custom-checkbox"></div>
+            I accept the terms and conditions.</label
+          >
+          <label class="block inline" for="privacy-policy">
+            <input
+              type="checkbox"
+              id="privacy-policy"
+              name="privacy-policy"
+              value="privacy-policy"
+              required
+            />
+            <div class="custom-checkbox"></div>
+            I have read and agree to the privacy policy.</label
+          >
+        </fieldset>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+      <hr />
+    </main>
+    <footer role="contentinfo">
+      <p>© Modular Manul - App Review</p>
+    </footer>
+  </body>
+</html>
